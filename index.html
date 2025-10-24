@@ -72,10 +72,29 @@
     <!-- Section Accueil (Hero) -->
     <section id="accueil" class="h-screen flex items-center justify-center bg-white">
         <div class="text-center px-4">
-            <!-- Placeholder pour une photo de profil -->
-            <div class="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-6 flex items-center justify-center">
-                <span class="text-gray-500">[Votre Photo Ici]</span>
+            
+            <!-- 
+              MODIFICATION ICI : 
+              Le 'src' pointe maintenant vers un fichier local dans un dossier 'assets'.
+              Assurez-vous de créer ce dossier et d'y placer votre image.
+            -->
+            <img 
+                src="./assets/photo-profil.jpg" 
+                alt="Photo de profil d'Alexis de Lécluse"
+                class="w-48 h-48 rounded-full object-cover mx-auto mb-6 shadow-lg"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <!-- 
+              Image de secours (placeholder) si la photo-profil.jpg n'est pas trouvée.
+              Elle est masquée par défaut (hidden) et ne s'affiche que si l'image principale plante.
+            -->
+            <div 
+                class="w-48 h-48 rounded-full bg-gray-300 mx-auto mb-6 hidden items-center justify-center shadow-lg"
+            >
+                <span class="text-gray-500 text-center text-sm p-4">Photo non trouvée. (Vérifiez le chemin ./assets/photo-profil.jpg)</span>
             </div>
+
+
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
                 Alexis de Lécluse
             </h1>
@@ -303,3 +322,4 @@
 
 </body>
 </html>
+
